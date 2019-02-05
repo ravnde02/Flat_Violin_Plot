@@ -66,7 +66,7 @@ GeomFlatViolin <-
           required_aes = c("x", "y")
 )
 
-flatviolinplot_line <- function(data, title, ylab, xlab) {
+flatviolinplot <- function(data, title, ylab, xlab) {
 	xaxes <- data[,1]
 	yaxes <- data[,2]
 	
