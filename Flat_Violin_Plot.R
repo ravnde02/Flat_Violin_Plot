@@ -66,7 +66,8 @@ GeomFlatViolin <-
           required_aes = c("x", "y")
 )
 
-flatviolinplot <- function(data, title, ylab, xlab) {
+flatviolinplot <- function(data, title, xlab, ylab) {
+	
 	xaxes <- data[,1]
 	yaxes <- data[,2]
 	
@@ -80,4 +81,14 @@ flatviolinplot <- function(data, title, ylab, xlab) {
 			plot.title = element_text(hjust = 0.5, face = "bold", size = 18),
 			axis.line = element_line(colour = "black", size = 0.5))
 violin
+
 }
+
+# For Example #
+data <- mtcars
+head(data)
+data2 <- data.frame(data[,c(2,4)]) #x axes must be [,1] and y axes [,2]
+head(data2)
+data2$cyl <- as.factor(data2$cyl)
+
+flatviolinplot(data2, "How cylinders affect HP","Num of Cylinders", "HP")
